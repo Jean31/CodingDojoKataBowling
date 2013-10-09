@@ -14,15 +14,15 @@ public class TestScoreCounter {
 
 	private ScoreCounter counter;
 
-	@Before
-	public void init()
+	@Before	public void 
+	init()
 	{
 		counter = new ScoreCounter();
 	}
 	
-	@Test
-	public void testCountScoreNoob() {
-
+	@Test public void 
+	testCountScoreNoob() 
+	{
 		List <String> partie = new ArrayList<String>() {{
 			add("0"); add("0");	add("0"); add("0");
 			add("0"); add("0"); add("0"); add("0");
@@ -34,10 +34,10 @@ public class TestScoreCounter {
 		assertEquals(new Integer(0), counter.getScore(partie));
 	}
 
-	@Test		
-	public void testCountScoreBeginer() {
-
-//		Differentes façon d'initialiser une liste
+	@Test public void 
+	testCountScoreBeginer() 
+	{
+//		Differentes faÃ§on d'initialiser une liste
 //		List <String> partie2 = Arrays.asList( "1" , "1");
 //		
 //		List <String> partie3 = new ArrayList<String>();
@@ -53,8 +53,8 @@ public class TestScoreCounter {
 		assertEquals(new Integer(20), counter.getScore(partie));
 	}
 	
-	@Test 
-	public void testCountScoreMedium()
+	@Test public void 
+	testScoreWith1Spare()
 	{
 		List <String> partie = new ArrayList<String>(){{
 			add("1"); add("9"); add("1"); add("1"); add("1");
@@ -64,5 +64,18 @@ public class TestScoreCounter {
 		}};
 
 		assertEquals(new Integer(29), counter.getScore(partie));
+	}
+	
+	@Test public void
+	testScoreWith2Spares()
+	{
+		List <String> partie = new ArrayList<String>(){{
+			add("1"); add("9"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("9"); add("1"); add("1");
+		}};
+
+		assertEquals(new Integer(38), counter.getScore(partie));
 	}
 }
