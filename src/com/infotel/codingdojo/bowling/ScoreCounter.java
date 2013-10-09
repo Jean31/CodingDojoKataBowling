@@ -19,7 +19,7 @@ public class ScoreCounter {
 
 			Integer trie2 = Integer.parseInt(iter.next());
 
-			if (trie1 + trie2 == 10) // -> extract method
+			if (isSpare(trie1, trie2)) 
 			{
 				// Beurk
 				Integer trie3 = Integer.parseInt(partie.get(partie.indexOf(trie2)+1)); // Index intermediaire
@@ -29,5 +29,9 @@ public class ScoreCounter {
 			}
 		}
 		return result;
+	}
+
+	private boolean isSpare(Integer trie1, Integer trie2) {
+		return (trie1 + trie2) == 10;
 	}
 }
