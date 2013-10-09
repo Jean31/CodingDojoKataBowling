@@ -1,4 +1,5 @@
 CodingDojoKataBowling
 =====================
 
-Second Coding Dojo with Kata Bowling
+- Second Coding Dojo avec le KataBowling
+- Premiers essais d'utilisation de Git
