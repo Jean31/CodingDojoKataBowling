@@ -21,7 +21,7 @@ public class TestScoreCounter {
 	}
 	
 	@Test public void 
-	testCountScoreNoob() 
+	testCountScoreNul() 
 	{
 		List <String> partie = new ArrayList<String>() {{
 			add("0"); add("0");	add("0"); add("0");
@@ -66,10 +66,23 @@ public class TestScoreCounter {
 		assertEquals(new Integer(29), counter.getScore(partie));
 	}
 	
+	@Test public void 
+	testScoreWithoutSpare()
+	{
+		List <String> partie = new ArrayList<String>(){{
+			add("1"); add("1"); add("9"); add("0"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+		}};
+
+		assertEquals(new Integer(27), counter.getScore(partie));
+	}
+	
 	@Test public void
 	testScoreWith2Spares()
 	{
-		List <String> partie = new ArrayList<String>(){{
+		List <String> partie = new ArrayList<String>() {{
 			add("1"); add("9"); add("1"); add("1"); add("1");
 			add("1"); add("1"); add("1"); add("1"); add("1");
 			add("1"); add("1"); add("1"); add("1"); add("1");
@@ -78,4 +91,44 @@ public class TestScoreCounter {
 
 		assertEquals(new Integer(38), counter.getScore(partie));
 	}
+	
+	@Test public void
+	testScoreWith2consecutiveSpare()
+	{ 
+		List <String> partie = new ArrayList<String>() {{
+			add("1"); add("1"); add("1"); add("9"); add("1");
+			add("9"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+		}};
+		
+		assertEquals(new Integer(38), counter.getScore(partie));
+	}
+	
+	@Test public void
+	testScoreWithStrike()
+	{
+		List <String> partie = new ArrayList<String>() {{
+			add("10"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+		}};
+		
+		assertEquals(new Integer(30), counter.getScore(partie));
+	}
+	
+	@Test public void
+	testScoreWith2Strikes()
+	{
+		List <String> partie = new ArrayList<String>() {{
+			add("10"); add("10"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); add("1"); add("1"); add("1");
+		}};
+		
+		assertEquals(new Integer(49), counter.getScore(partie));
+	}
+	
 }
