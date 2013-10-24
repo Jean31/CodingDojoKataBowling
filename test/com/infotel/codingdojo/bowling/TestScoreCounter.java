@@ -24,11 +24,11 @@ public class TestScoreCounter {
 	testCountScoreNul() 
 	{
 		List <String> partie = new ArrayList<String>() {{
-			add("0"); add("0");	add("0"); add("0");
-			add("0"); add("0"); add("0"); add("0");
-			add("0"); add("0");	add("0"); add("0");
-			add("0"); add("0"); add("0"); add("0");
-			add("0"); add("0");	add("0"); add("0");
+			add("0"); add("0");		add("0"); add("0");
+			add("0"); add("0"); 	add("0"); add("0");
+			add("0"); add("0");		add("0"); add("0");
+			add("0"); add("0"); 	add("0"); add("0");
+			add("0"); add("0");		add("0"); add("0");
 		}};
 		
 		assertEquals(new Integer(0), counter.getScore(partie));
@@ -44,10 +44,11 @@ public class TestScoreCounter {
 //		Collections.addAll(partie3, "A", "B", "C", "D");
 		
 		List <String> partie = new ArrayList<String>() {{
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1");
+			add("1"); add("1");		add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1");		add("1"); add("1");
 		}};
 
 		assertEquals(new Integer(20), counter.getScore(partie));
@@ -57,10 +58,11 @@ public class TestScoreCounter {
 	testScoreWith1Spare()
 	{
 		List <String> partie = new ArrayList<String>(){{
-			add("1"); add("9"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("9"); 	add("1"); add("1");
+			add("1"); add("1");		add("1"); add("1");
+			add("1"); add("1");		add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1");
 		}};
 
 		assertEquals(new Integer(29), counter.getScore(partie));
@@ -70,10 +72,11 @@ public class TestScoreCounter {
 	testScoreWithoutSpare()
 	{
 		List <String> partie = new ArrayList<String>(){{
-			add("1"); add("1"); add("9"); add("0"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1"); 	add("9"); add("0"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1");		add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1");
 		}};
 
 		assertEquals(new Integer(27), counter.getScore(partie));
@@ -83,10 +86,11 @@ public class TestScoreCounter {
 	testScoreWith2Spares()
 	{
 		List <String> partie = new ArrayList<String>() {{
-			add("1"); add("9"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("9"); add("1"); add("1");
+			add("1"); add("9"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1");		add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("9"); 	add("1"); add("1");
 		}};
 
 		assertEquals(new Integer(38), counter.getScore(partie));
@@ -96,10 +100,11 @@ public class TestScoreCounter {
 	testScoreWith2consecutiveSpare()
 	{ 
 		List <String> partie = new ArrayList<String>() {{
-			add("1"); add("1"); add("1"); add("9"); add("1");
-			add("9"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("1"); add("1");	 	add("1"); add("9");
+			add("1"); add("9"); 	add("1"); add("1"); 
+			add("1"); add("1");		add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1");
 		}};
 		
 		assertEquals(new Integer(38), counter.getScore(partie));
@@ -109,10 +114,11 @@ public class TestScoreCounter {
 	testScoreWithStrike()
 	{
 		List <String> partie = new ArrayList<String>() {{
-			add("10"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("10"); 				add("1"); add("1");
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1"); 	add("1"); add("1");
 		}};
 		
 		assertEquals(new Integer(30), counter.getScore(partie));
@@ -122,10 +128,11 @@ public class TestScoreCounter {
 	testScoreWith2Strikes()
 	{
 		List <String> partie = new ArrayList<String>() {{
-			add("10"); add("10"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
-			add("1"); add("1"); add("1"); add("1"); add("1");
+			add("10"); 				add("10"); 
+			add("1"); add("1"); 	add("1"); add("1"); 
+			add("1"); add("1");		add("1"); add("1"); 
+			add("1"); add("1");		add("1"); add("1"); 
+			add("1"); add("1");		add("1"); add("1");
 		}};
 		
 		assertEquals(new Integer(49), counter.getScore(partie));
